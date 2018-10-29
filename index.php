@@ -70,6 +70,11 @@ try{
 					$stat3 -> jsonStat3($_GET['term'] );
 				}
 			}
+			
+					
+				
+			
+	
 		/* search page exist */
 		elseif(in_array($_GET['page'],$pages)){
 			$page=$_GET['page'];

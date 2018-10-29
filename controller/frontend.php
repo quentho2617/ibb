@@ -42,7 +42,8 @@ require_once('model/OperationManager.php');
     class PageOperation{
         /* * page menu view * */
         public function operation(){
-            
+            $OperationManager= new OperationManager;
+            $recup1=$OperationManager-> petiteEnseigne();
             
             
 
@@ -91,19 +92,21 @@ require_once('model/OperationManager.php');
         }
 
 
-    public function jsonStat3($term3){
-                    
-        $OperationManager= new OperationManager;
-        $recup=$OperationManager-> search_stat3($term3);
-        $array=[];
-        while($data=$recup->fetch()){
-            array_push($array,$data['stat3_name']);
+        public function jsonStat3($term3){
+                        
+            $OperationManager= new OperationManager;
+            $recup=$OperationManager-> search_stat3($term3);
+            $array=[];
+            while($data=$recup->fetch()){
+                array_push($array,$data['stat3_name']);
+            }
+
+            echo json_encode($array);
+            
         }
 
-        echo json_encode($array);
-        
+
     }
-}
 
 
     class PageArticle{

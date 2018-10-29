@@ -29,10 +29,17 @@
     clientName();  stat1();   stat2();   stat3(); 
     ?>
    </fieldset> 
-   <form action="index.php" method="post">
    
+                
+                  
    <SELECT type="text" name="enseigne2" required />
-            <OPTION></OPTION>
+      <?php 
+                
+        foreach ($recup1 as $row){
+          echo '<OPTION>'. $row['name'] . '</OPTION>';
+        }
+                
+      ?>      
             
            </SELECT>
    
