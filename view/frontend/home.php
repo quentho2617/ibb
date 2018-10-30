@@ -132,7 +132,7 @@
                         echo"<td></td>";
                         echo"<td></td>";
                         echo"<td></td>";
-                        echo"<td>".$row['operation_month']."</td>";
+                        echo"<td></td>";
                         echo"<td>".$row['operation_start_date']."</td>";
                         echo"<td>".$row['operation_end_date']."</td>";
                         echo"<td>".$row['operation_available_request_date']."</td>";

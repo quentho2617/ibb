@@ -44,11 +44,17 @@ require_once('model/OperationManager.php');
         public function operation(){
             $OperationManager= new OperationManager;
             $recup1=$OperationManager-> petiteEnseigne();
-            //$recup2=$OperationManager-> GetOpe();
 
             
 
                 require('view/frontend/operation.php');
+            }
+            public function Get_Op($opName,$opStartDate,$opEndDate,$opReqDate,$opcommitStartDate,$opCommitEndDate,$prio){
+                $OperationManager= new OperationManager;
+                $affectedLines =$OperationManager-> GetOpe($opName,$opStartDate,$opEndDate,$opReqDate,$opcommitStartDate,$opCommitEndDate,$prio);
+                if($affectedLines==false){
+                    throw new Exception("impossible d'envoyer les données");
+                }
             }
 
             public function jsonStat0($term0){

@@ -1,4 +1,5 @@
 
+
 <!--page operation-->
 <?php $title = "Operation"?>
 
@@ -21,13 +22,31 @@
             </header>
   
 	<body>
+
+
 		<h1> Nouvelle opération</h1>
-    
-  <fieldset>
-    <legend>Entrer les informations de l'opération</legend><fieldset>  
     <?php
-    clientName();  stat1();   stat2();   stat3(); 
+      if(isset($_POST['submit'])){
+        $opName=htmlspecialchars($_POST['operation_name']);
+        $opStartDate=htmlspecialchars($_POST['operation_start_date']);
+        $opEndDate=htmlspecialchars($_POST['operation_end_date']);
+        $opReqDate=htmlspecialchars($_POST['operation_available_request_date']);
+        $opcommitStartDate=htmlspecialchars($_POST['operation_commitment_start_date']);
+        $opCommitEndDate=htmlspecialchars($_POST['operation_commitment_end_date']);
+        $prio=htmlspecialchars($_POST['prio']);
+      
+        Get_Op($opName,$opStartDate,$opEndDate,$opReqDate,$opcommitStartDate,$opCommitEndDate,$prio);
+          
+      }
     ?>
+  <form action="">
+  <fieldset>
+    <legend>Entrer les informations de l'opération</legend>
+    <fieldset>  
+    <input type="text" placeholder="client" name="client" id="client" class="ui-autocomplete-input" autocomplete="off" />
+    <input type="text" placeholder="stat1" name="stat1" id="stat1" class="ui-autocomplete-input" autocomplete="off" />
+    <input type="text" placeholder="stat2" name="stat2" id="stat2" class="ui-autocomplete-input" autocomplete="off" />
+    <input type="text" placeholder="stat3" name="stat3" id="stat3" class="ui-autocomplete-input" autocomplete="off" />
    </fieldset> 
    
                 
@@ -46,15 +65,7 @@
     <p><label for="operation_name">Nom ou de l'opération :</label><br>
     <input type="text" name="operation_name" /></p>
 
-    <p><label for="status">Etat :</label><br>
-   <SELECT type="text" name="status" required />
-      
-          <OPTION> Non validé</OPTION>;
-          <OPTION> En cours</OPTION>;
-          <OPTION> Terminé</OPTION>;
-          <OPTION> Annulé</OPTION>;
-   
-           </SELECT>
+ 
    
     <p><label for="operation_start_date">Date de début de l'opération (aaaa-mm-jj) :</label><br>
     <input type="Date" name="operation_start_date" /></p>
@@ -76,63 +87,11 @@
 <input type="radio" name="prio" value="oui" id="oui" checked="checked" /> <label for="oui">Oui</label>
 <input type="radio" name="prio" value="non" id="non" /> <label for="non">Non</label>   </p>               
   <p></p>
-<input type="submit" name="Ok" value="Ajouter une nouvelle opération" >
+<button type=submit name=submit class=" btn btn-success">Valider</button>
 </form>
 
-<?php
-    function clientName()
-    {
-?>     
-                      
-<form method="GET">
-  <input type="text" placeholder="client" id="client" class="ui-autocomplete-input" autocomplete="off" />
-                            
-</form>
-<?php
-     }
-?>
-
-<?php
-    function stat1()
-    {
-?>     
-                      
-<form method="GET">
-  <input type="text" placeholder="stat1" id="stat1" class="ui-autocomplete-input" autocomplete="off" />
-                            
-</form>
-<?php
-     }
-?> 
-<?php
-    function stat2()
-    {
-?>     
-                      
-<form method="GET">
-  <input type="text" placeholder="stat2" id="stat2" class="ui-autocomplete-input" autocomplete="off" />
-                            
-</form>
-<?php
-     }
-?>
-<?php
-    function stat3()
-    {
-?>     
-                      
-<form method="GET">
-  <input type="text" placeholder="stat3" id="stat3" class="ui-autocomplete-input" autocomplete="off" />
-                            
-</form>
-<?php
-     }
-?>
+     
   </body>
-
-
-
-
 
 
 <?php $content = ob_get_clean(); ?>
