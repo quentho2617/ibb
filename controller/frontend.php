@@ -44,7 +44,8 @@ require_once('model/OperationManager.php');
         public function operation(){
             $OperationManager= new OperationManager;
             $recup1=$OperationManager-> petiteEnseigne();
-            
+            //$recup2=$OperationManager-> GetOpe();
+
             
 
                 require('view/frontend/operation.php');

@@ -46,9 +46,15 @@
     <p><label for="operation_name">Nom ou de l'opération :</label><br>
     <input type="text" name="operation_name" /></p>
 
+    <p><label for="status">Etat :</label><br>
+   <SELECT type="text" name="status" required />
+      
+          <OPTION> Non validé</OPTION>;
+          <OPTION> En cours</OPTION>;
+          <OPTION> Terminé</OPTION>;
+          <OPTION> Annulé</OPTION>;
    
-    <p><label for="operation_month">Mois de l'opération :</label><br>
-    <input type="text" name="operation_month" /></p>
+           </SELECT>
    
     <p><label for="operation_start_date">Date de début de l'opération (aaaa-mm-jj) :</label><br>
     <input type="Date" name="operation_start_date" /></p>

@@ -99,7 +99,29 @@ class OperationManager extends Manager
 		$req =$db -> query("SELECT name FROM small_enseigne");
 		return $req;
 	}
+/*
+	public function  GetOpe(){
+		$db=$this -> dbConnect();
+		$req =$db -> query("INSERT INTO   operation(operation_name,
+		operation_month,
+		operation_start_date,
+		operation_end_date,
+		operation_available_request_date,
+		operation_commitment_start_date,
+		operation_commitment_end_date,prio,operation_creation_date,operation_modification_date) 
+		VALUES(?,?,?,?,?,?,?,?,NOW(),NOW())");
 
+		$req->execute(array($_POST['operation_name'],
+		$_POST['operation_month'],
+		$_POST['operation_start_date'],
+		$_POST['operation_end_date'],
+		$_POST['operation_available_request_date'],
+		$_POST['operation_commitment_start_date'],
+		$_POST['operation_commitment_end_date'],
+		$_POST['prio']));
+		$resultat = $req->fetch();
+		return $resultat;
+	}*/
 }
 
 /*
