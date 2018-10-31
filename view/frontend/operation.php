@@ -1,9 +1,9 @@
-
-
 <!--page operation-->
 <?php $title = "Operation"?>
 
-<?php ob_start();?>
+<?php ob_start();
+  
+?>
 
 <?php
     include('body/topbar.php')
@@ -24,7 +24,7 @@
 	<body>
 
 
-		<h1> Nouvelle opération</h1>
+		<h1> Nouvelle opération</h1> 
     <?php
       if(isset($_POST['submit'])){
         $opName=htmlspecialchars($_POST['operation_name']);
@@ -34,12 +34,19 @@
         $opcommitStartDate=htmlspecialchars($_POST['operation_commitment_start_date']);
         $opCommitEndDate=htmlspecialchars($_POST['operation_commitment_end_date']);
         $prio=htmlspecialchars($_POST['prio']);
-      
+        $client=htmlspecialchars($_POST['client']);
+
         Get_Op($opName,$opStartDate,$opEndDate,$opReqDate,$opcommitStartDate,$opCommitEndDate,$prio);
-          
+        Session_Op();
+        
+         $cli=Client_Id($client);
+         $numb=$cli[1];
+        $clientId=$cli[0];
+        $opId=$_SESSION['opId'];
+        Client_Op($opId,$clientId,$numb);  
       }
     ?>
-  <form action="">
+  <form method="post">
   <fieldset>
     <legend>Entrer les informations de l'opération</legend>
     <fieldset>  
@@ -48,9 +55,9 @@
     <input type="text" placeholder="stat2" name="stat2" id="stat2" class="ui-autocomplete-input" autocomplete="off" />
     <input type="text" placeholder="stat3" name="stat3" id="stat3" class="ui-autocomplete-input" autocomplete="off" />
    </fieldset> 
-   
+  
                 
-                  
+                
    <SELECT type="text" name="enseigne2" required />
       <?php 
                 

@@ -150,14 +150,15 @@
                         echo"<td>".$row['operation_promotionnal_reduction']."</td>";
                         echo"<td>".$row['operation_pvc_managment']."</td>";
                         echo"<td></td>";
+                        echo"<td></td>";
+                        echo"<td></td>";
+                        echo"<td></td>";
+                        echo"<td></td>";
+                        echo"<td></td>";
+                        echo"<td></td>";
+                        echo"<td></td>";
+                        echo"<td></td>";
 
-                        echo"<td></td>";
-                        echo"<td></td>";
-                        echo"<td></td>";
-                        echo"<td></td>";
-                        echo"<td></td>";
-                        echo"<td></td>";
-                        echo"<td></td>";
 
                 }
                         
